@@ -8,7 +8,7 @@ var nextKey = 0;
 function Sound(filename, basePath, onError) {
   this._filename = basePath ? basePath + '/' + filename : filename;
 
-  if (IsAndroid && !basePath) {
+  if (IsAndroid && basePath !== '') {
     this._filename = filename.toLowerCase().replace(/\.[^.]+$/, '');
   }
 
